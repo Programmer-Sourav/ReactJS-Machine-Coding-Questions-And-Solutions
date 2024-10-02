@@ -1,0 +1,27 @@
+.defaultLight{
+    border-radius: 50%;
+    width: 92px;
+    height: 92px;
+    background-color: gray;
+    margin: 16px;
+}
+.redlight{
+    border-radius: 50%;
+    width: 92px;
+    height: 92px;
+    background-color: red;
+}
+
+.greenlight{
+    border-radius: 50%;
+    width: 92px;
+    height: 92px;
+    background-color: green;
+}
+
+.yellowLight{
+    border-radius: 50%;
+    width: 92px;
+    height: 92px;
+    background-color: yellow;
+}

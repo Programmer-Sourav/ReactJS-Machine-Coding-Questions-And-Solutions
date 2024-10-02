@@ -1,0 +1,11 @@
+.progressbar{
+    display: flex;
+    height: 32px;
+    width: 256px;
+    background-color: rgb(232, 227, 227);
+}
+.filled {
+    background-color: rgb(76, 175, 80); /* Green color for the filled portion */
+    height: 100%;
+    transition: width 0.25s ease; /* Smooth transition effect */
+  }

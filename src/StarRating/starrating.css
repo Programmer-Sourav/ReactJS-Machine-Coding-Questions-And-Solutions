@@ -1,0 +1,35 @@
+.star-rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .stars {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .star {
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    padding: 5px;
+  }
+  
+  .star.active {
+    color: gold;
+  }
+  
+  .star:hover {
+    color: orange;
+  }
+  
+  .rating-text p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+  }
+  

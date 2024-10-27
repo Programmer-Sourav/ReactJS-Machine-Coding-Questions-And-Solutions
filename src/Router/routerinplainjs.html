@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <button onclick="navigateTo('/home')">Home</button>
+        <button onclick="navigateTo('/pageone')">Page One</button>
+        <button onclick="navigateTo('/user/123')">User 123</button>
+        <button onclick="navigateTo('/user/456')">User 456</button>
+    </nav>
+    <div id="app"></div>
+    <script>
+    // Components (could be defined as strings, templates, or functions)
+    const HomePage = '<h1>Home page </h1>';
+    const PageOne = '<h1>Page One</h1>'
+    const UserProfile = (userId) => `<h1>User Profile</h1><p>Viewing Profile for User ${userId}</p>`
+ 
+    const routerMap = new Map();
+
+    // Registering static routes
+    routerMap.set('/home', HomePage);
+    routerMap.set('/pageone', PageOne);
+
+    // Registering dynamic routes using a function for handling dynamic data
+    routerMap.set('/user/:id', (params) => UserProfile(params.id));
+
+
+    function matchRoute(route, path){
+      const routeparts = route.split("/")
+      const pathparts = path.split("/")
+
+      if(routeparts.length !== pathparts.length) return null;
+
+      const param = {}
+
+      for(let i =0; i<routeparts.length; i++){
+        if(routeparts[i].startsWith(":")){
+            const paramName = routeparts[i].substring(1);
+            param[paramName] = pathparts[i];
+        }
+        else if(routeparts[i]!==pathparts[i]){
+            return null;
+        }
+      }
+      return params;
+    }
+
+    function navigateTo(path){
+         window.history.pushState({}, '', path);
+         handleNavigation();
+    }
+    // Function to find and render the appropriate component based on the current path
+     function handleNavigation(){
+        const path = window.location.pathname || "/home"
+
+        for(const[route, component] of routerMap.entries()){
+            const params = matchRoute(route, path);
+            if(params){
+                const renderedComponent = typeof component ==="function" ? component(params) : component;
+                document.getElementById("app").innerHTML = renderedComponent;
+                return;
+            }
+        }
+        document.getElementById("app").innerHTML = `<h1>404 - Page not found </h1>`
+     }
+      // Handle browser navigation (back/forward)
+      window.addEventListener('popstate', handleNavigation);
+
+     // Initial load
+    handleNavigation();
+    </script>
+</body>
+</html>

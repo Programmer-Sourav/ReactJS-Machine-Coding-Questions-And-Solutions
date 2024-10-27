@@ -1,0 +1,52 @@
+.tabs-container {
+    display: flex;
+    justify-content: center; /* Center the tabs */
+    align-items: center;
+    height: 60px;
+    background-color: gainsboro;
+    width: 100%;
+    min-width: 1024px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .tabs {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    text-align: center;
+    transition: background 0.3s ease, border 0.3s ease; /* Smooth transition */
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .tabs:hover {
+    background-color: #e0e0e0; /* Add hover effect */
+  }
+  
+  .tabs.active {
+    background: #4CAF50; /* Change background color for selected tab */
+    color: white; /* Change text color to white */
+    border-bottom: none; /* Remove border on bottom of active tab */
+    font-weight: bold;
+    border-top: 2px solid #4CAF50; /* Highlight active tab with a top border */
+  }
+  
+  .content {
+    width: 100%;
+    padding: 20px;
+    background-color: blanchedalmond;
+    border: 1px solid #ddd;
+    border-top: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .tabbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  

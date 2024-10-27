@@ -1,0 +1,40 @@
+.comment-section {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .comment-input,
+  .reply-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .post-btn,
+  .reply-btn,
+  .reply-post-btn {
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .comments-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .comment-item {
+    margin-bottom: 20px;
+  }
+  
+  .reply-list {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  

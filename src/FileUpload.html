@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput" required>
+        <button type="submit">Upload</button>
+    </form>
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            const fileInput = document.getElementById("fileInput");
+            formData.append("file", fileInput.files[0]);
+
+            try {
+                const response = await fetch("https://d98bc0e9-1ba6-4bd2-a114-6294f5e79c51-00-2gzdzextztyni.sisko.replit.dev/upload", {
+                    method: "POST",
+                    body: formData
+                });
+                const result = await response.text();
+                alert(result);
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>

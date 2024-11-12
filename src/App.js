@@ -74,6 +74,8 @@ import useDarkMode from './CustomHooks/useDarkMode.jsx';
 import TransferList from './ListTransfer/TransferList.jsx';
 import MultiSelectDropdown from './MultiSelectDropdown/MultiSelectDropdown.jsx';
 import MyRouter from './Router/MyRouter.jsx';
+import UseRefRevise from './UseRefRevise.jsx';
+import FileUpload from './FileUpload.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -213,13 +215,16 @@ function App() {
       {/* <p>{!selectedMode? <button onClick={changeMode}>Change To Dark Mode</button>  : <button onClick={changeMode}>Change To Ligth Mode</button> }</p> */}
       {/* <TransferList/> */}
       {/* <MultiSelectDropdown/> */}
-      <nav>
+      {/* <nav>
                 <button onClick={() => navigate('/home')} style={{margin:"2px"}}>Home</button>
                 <button onClick={() => navigate('/pageone')} style={{margin:"2px"}}>Page One</button>
                 <button onClick={() => navigate('/user/123')} style={{margin:"2px"}}>User 123</button>
                 <button onClick={() => navigate('/user/456')} style={{margin:"2px"}}>User 456</button>
             </nav>
-      <MyRouter/>
+      <MyRouter/> */}
+      {/* <Parent/> */}
+      {/* <UseRefRevise/> */}
+      <FileUpload/>
     </div>
   );
 }

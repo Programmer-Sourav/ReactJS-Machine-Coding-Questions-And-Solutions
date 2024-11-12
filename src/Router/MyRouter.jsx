@@ -59,7 +59,10 @@ function matchRoute(route, path) {
 }
 
 export function MyRouterPair(routerMap, path, elementComponent) {
-    // Add path-component pair to the map
+     // Add path-component pair to the map
+     //path is of type string, and elementComponent is of Generic type
+    //for each path, there will be a component
+   //key value pairs (Hashmap), Key = path, value = Component
     routerMap.set(path, elementComponent);
 }
 

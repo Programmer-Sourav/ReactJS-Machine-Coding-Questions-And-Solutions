@@ -5,8 +5,9 @@ const useToggle = () =>{
 
 
     const toggleFunction = useCallback(()=>{
+        console.log(123, toggleState)
         setToggleState(toggleState =>!toggleState)
-    }, [])
+    }, [toggleState])
 
 
     return [toggleState, toggleFunction]

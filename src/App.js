@@ -35,11 +35,10 @@ import Form from './Form';
 import CountdownTimerRevise from './CountdownTimerRevise';
 import HandleWindowSize from './HandleWindowSize';
 import CountdownTimerR from './CountdownTimer/CountdownTimerR';
-import ProgressbarRevise from './ProgressBar/ProgressbarRevise';
 import StarRatingComponent from './StarRatingComponent';
 import ToastNotification from './ToastNotification/ToastNotification';
 import TodoList from './TodoList/TodoList';
-import StarRating from './StarRating/StarRating';
+//import StarRating from './StarRating/StarRating';
 import Typeahead from './typeaheadcopied/Typeahead';
 import TypeAhead from './TypeAhead/TypeAhead';
 import { ChildButton, ClickCounterWrapper } from './WrapperComponent/ClickCounterWrapper';
@@ -76,6 +75,24 @@ import MultiSelectDropdown from './MultiSelectDropdown/MultiSelectDropdown.jsx';
 import MyRouter from './Router/MyRouter.jsx';
 import UseRefRevise from './UseRefRevise.jsx';
 import FileUpload from './FileUpload.jsx';
+import AsyncComponent from './CustomHooks/AsyncComponent.jsx';
+import ShimmerUIComponent from './ShimmerUI/ShimmerUIComponent.jsx';
+import CountDownTimerR2 from './CountdownTimer/CountDownTimerR2.jsx';
+import CustomToggleComponent from './CustomHooks/CustomToggleComponent.jsx';
+import CustomUseFocus from './CustomHooks/CustomUseFocus.jsx';
+import CustomUsePrevious from './CustomHooks/CustomUsePrevious.jsx';
+import TimerComponent from './CustomHooks/TimerComponent.jsx';
+import InfiniteScrollRevise from './InfinteScroll/InfiniteScrollRevise.jsx';
+import InfiniteScrollTwo from './InfinteScroll/InfiniteScrollTwo.jsx';
+import JsonAccordianRevise from './Json-accordian/JsonAccordianRevise.jsx';
+import TransferListTwo from './ListTransfer/TransfarListTwo.jsx';
+import MultiSelectDropdownRevise from './MultiSelectDropdown/MultiSelectDropdownRevise.jsx';
+import ProgressBarRevise from './ProgressBar/ProgressBarRevise.jsx';
+import ShimmerUIRevise from './ShimmerUIRevise.jsx/ShimmerUIComponent.jsx';
+import Shimmer from './ShimmerUI/Shimmer.jsx';
+import StarRating from './StarRatingRevise/StarRating.jsx';
+import MultiSelect from './MultiSelectionDropdown/MultiSelect.jsx';
+import MultiSelectRunner from './MultiSelectionDropdown/MultiSelectRunner.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -224,7 +241,29 @@ function App() {
       <MyRouter/> */}
       {/* <Parent/> */}
       {/* <UseRefRevise/> */}
-      <FileUpload/>
+      {/* <FileUpload/> */}
+      {/* <CountdownTimer/> */}
+      {/* <AsyncComponent/> */}
+      {/* <ShimmerUIComponent/> */}
+      {/* <CountDownTimerR2/> */}
+      {/* <CustomToggleComponent/> */}
+      {/* <CustomUseFocus/> */}
+      {/* <CustomUsePrevious/> */}
+      {/* <TimerComponent/> */}
+      {/* <InfiniteScrollRevise/> */}
+      {/* <InfiniteScrollTwo/> */}
+      {/* <JsonAccordian/> */}
+      {/* <JsonAccordianRevise/> */}
+      {/* <TransferList/> */}
+      {/* <TransferListTwo/> */}
+      {/* <MultiSelectDropdownRevise/> */}
+      {/* <ProgressBarRevise/> */}
+      {/* <ShimmerUIRevise/> */}
+      {/* <Shimmer/> */}
+      {/* <StarRating/> */}
+      {/* <StopwatchvOne/> */}
+        {/* <MultiSelectDropdown/> */}
+        <MultiSelectRunner/>
     </div>
   );
 }

@@ -1,41 +1,56 @@
+import "./progressbar.css"
 import { useEffect, useState } from "react"
-import "../progressbar.css"
 
-export default function ProgressbarRevise(){
-
+export default function ProgressBarRevise(){
+    
    const [filled, setFilled] = useState(0)
-   const [started, setStarted] = useState(false)
+   const [isRunning, setIsRunning] = useState(false)
+   const [timerId, setTimeId] = useState(null)
 
-  //total = 100
-  //filed = 4
-  //empty = 96
+
 
    useEffect(()=>{
-    console.log(123, filled)
-    if(!started){
-    if(filled<100){    
-    const interval = setInterval(()=>{
-        setFilled((filled)=>filled+4)
+
+    if(isRunning && filled<100){
+    const id = setInterval(()=>{
+        setFilled((prev)=>prev+1)
     }, 250)
-    return ()=>clearInterval(interval)
-    }
+    setTimeId(id);
+    return ()=>{clearInterval(id)}
    }
    else if(filled === 100){
-     setStarted(false)
+    console.log(444, filled)
+    setIsRunning(false);
+    clearTimeout(timerId);
    }
-}, [filled])
 
-   const startProgressBar = () =>{
-    setStarted(true)
+   }, [filled, isRunning])
+
+
+   const onStartBtn = () =>{
+      setIsRunning(true)
    }
+
+   const onResetBtn = () =>{
+    setIsRunning(false)
+    setFilled(0)
+    clearTimeout(timerId);
+   }
+
+   const onStopBtn = () =>{
+     setIsRunning(false)
+   }
+
     return(
-      <div> 
+        <div>
         <div className="progressbar">
-            <div className="filled" style={{width: `${filled}%`}}>
-
-            </div>
+        <div className= {`progressbar-filled`} style={{width: `${filled}%`}} >
+        </div> 
+            <span className="progressPercent">{filled}%</span>
         </div>
-        <button onClick={startProgressBar}>Start Progress Bar</button>
-      </div>
+        <button onClick={onStartBtn} className="btn"> Start </button>
+        <button onClick={onStopBtn} className="btn">Stop</button>
+        <button onClick={onResetBtn} className="btn">Reset</button>
+        </div>
     )
 }

@@ -8,7 +8,7 @@ const usePageBottom = () =>{
     const handleScroll = () =>{
         const scrollTop = document.documentElement.scrollTop;
         const offsetHeight = document.documentElement.offsetHeight;
-        const innerHeight = window.innerHeight;
+        const innerHeight = window.innerHeight; //height of the browsers viewport
         const atBottom = scrollTop + innerHeight >= offsetHeight
         setIsBottom(atBottom)
     }

@@ -6,7 +6,7 @@ export default function InfiniteScroll(){
 
 const [images, setImages] = useState(Array.from({length: 5}, (_, i)=>({
     id : i + 1,
-    url: `https://source.unsplash.com/random/200x200?pic=${i + 1}`
+    url: `https://api.pexels.com/v1/curated?page=${i+1}&per_page=15`
 })))
 
 const [isFetching, setIsFetching] = useState(false)

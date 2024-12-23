@@ -1,4 +1,3 @@
-
 .progressbar {
     position: relative;
     overflow: hidden;
@@ -15,7 +14,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: #eee;
+    color: goldenrod;
     text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
   }
   

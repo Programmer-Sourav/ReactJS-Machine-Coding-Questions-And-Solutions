@@ -2,7 +2,7 @@ import "./pills.css"
 
 export default function Pills({id, category, deleteHandler}){
 
-
+  console.log(444, id, category)
 
     return(
         <div className="pills"> 

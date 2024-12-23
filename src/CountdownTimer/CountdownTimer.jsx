@@ -1,3 +1,5 @@
+import "../CountdownTimer/Timer.css"
+
 import { useEffect, useState } from "react"
 
 export default function CountdownTimer(){

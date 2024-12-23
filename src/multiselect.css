@@ -1,0 +1,16 @@
+.multi-select-design{
+    width: 512px;
+    height: auto;
+    border: 2px solid gray;
+}
+
+.item-design{
+    width: 512px;
+    height: 48px;
+    background-color: beige;
+    border: 2px solid gray;
+    text-align: center;
+    align-content: center;
+    margin: 8px;
+    list-style: none;
+}

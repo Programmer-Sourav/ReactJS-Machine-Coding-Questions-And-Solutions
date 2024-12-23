@@ -1,0 +1,22 @@
+.mb{
+    margin-top: 64px;
+    display: flex;
+    flex-direction: row;
+}
+.meme{
+  width: 128px;
+  height: 128px;
+  border: 1px solid gray;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+.shimmer{
+  width: 128px;
+  height: 128px;
+  border: 1px solid gray;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px; 
+  background: gainsboro;
+}

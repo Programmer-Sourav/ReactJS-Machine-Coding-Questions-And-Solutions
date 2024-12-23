@@ -1,0 +1,24 @@
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 356px;
+}
+
+.memecard{
+    width: 256px;
+    height: 256px;
+    border: 1px solid gray;
+    margin: 32px;
+   
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  .shimmercard{
+    width: 256px;
+    height: 256px;
+    border: 1px solid gray;
+    margin: 32px;
+    border-radius: 8px; 
+    background: gray;
+    object-fit: contain;
+  }

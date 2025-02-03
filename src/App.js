@@ -59,8 +59,8 @@ import Tabs from './TabSelection/Tabs.jsx';
 import NestedCommentsRJS2 from './NestedComments/NestedCommentsRJS2.jsx';
 import NestedComponents from './NestedComments/NestemCommentsFull/NestedComponents.jsx';
 import CommentsData from "./NestedComments/NestemCommentsFull/data/comments.json"
-import NestedComments from './NestedComments/NestemCommentsFull/components/NestedComments.jsx';
-import MainFile from './NestedComments/NestedComments/MainFile.jsx';
+//import NestedComments from './NestedComments/NestemCommentsFull/components/NestedComments.jsx';
+//import MainFile from './NestedComments/NestedComments/MainFile.jsx';
 import FilterList from './ApiIntegration/FilterList.jsx';
 import useTimeout from './CustomHooks/useTimeout.jsx';
 import usePrevious from './usePrevious.js';
@@ -93,6 +93,20 @@ import Shimmer from './ShimmerUI/Shimmer.jsx';
 import StarRating from './StarRatingRevise/StarRating.jsx';
 import MultiSelect from './MultiSelectionDropdown/MultiSelect.jsx';
 import MultiSelectRunner from './MultiSelectionDropdown/MultiSelectRunner.jsx';
+import PasswordGenerator from './PasswordGenerator/PasswordGenerator.jsx';
+import PasswordStrength from './PasswordStrength/PasswordStrength.jsx';
+import StopWatchVTwo from './Stopwatch/StopWatchVTwo';
+import TabsRevise from './TabSelection/TabsRevise.jsx';
+import ErrorApp from './ErrorBoundary/ErrorApp.jsx';
+import DataTable from './DataTable/DataTable.jsx';
+import ColorfulList from './ColorfulList/ColorfulList.jsx';
+//import Folder from './FileExplorer/Folder.jsx';
+// import FileExplorer from './FileExplorer/FileExplorer.jsx';
+// import FileExplorerGPT from './FileExplorer/FileExplorerGPT.jsx';
+// import NestedComments from './NestedComments2/NestedComments.jsx';
+import NestedCommentTwo from './NestedComments2/NestedCommentsTwo.jsx';
+import NestedComment from './NestedComments2/NestedComment3.jsx';
+import SearchComponent from './GiphyEngine/SearchComponent.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -263,7 +277,25 @@ function App() {
       {/* <StarRating/> */}
       {/* <StopwatchvOne/> */}
         {/* <MultiSelectDropdown/> */}
-        <MultiSelectRunner/>
+        {/* <MultiSelectRunner/> */}
+        {/* <PasswordGenerator/> */}
+        {/* <PasswordStrength/> */}
+        {/* <StarRating/> */}
+        {/* <StopwatchvOne/> */}
+        {/* <StopWatchVTwo/> */}
+        {/* <Tabs/> */}
+        {/* <TabsRevise/> */}
+        {/* <TypeAhead/> */}
+        {/* <ErrorApp/> */}
+        {/* <DataTable/> */}
+        {/* <ColorfulList/> */}
+        {/* <Folder/> */}
+        {/* <FileExplorer/> */}
+        {/* <FileExplorerGPT/> */}
+        {/* <NestedComments/> */}
+        {/* <NestedCommentTwo/> */}
+        {/* <NestedComment/> */}
+        <SearchComponent/>
     </div>
   );
 }

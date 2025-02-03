@@ -1,0 +1,30 @@
+.inputcommentbox{
+    height: 40px;
+    width: 512px;
+    border: 1px solid gray;
+    text-align: left;
+    padding-left: 8px;
+    display: inline;
+}
+.btn{
+    height: 40px;
+    margin-left: 16px;
+    display: inline;
+}
+.add-comment-container{
+    display: flex;
+    height: 72px;
+    background-color: red;
+}
+.replybtn{
+    background-color: transparent;
+    color: blue;
+    font-size: 12px;
+    height: 24px;
+}
+.replybtn:focus{
+    background-color: transparent; 
+}
+.replybtn:hover{
+    background-color: transparent; 
+}

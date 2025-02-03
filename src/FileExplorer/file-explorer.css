@@ -1,0 +1,24 @@
+.listitem{
+    list-style: none;
+    margin: 8px;
+}
+.folder{
+    display: flex;
+    height: 48px;
+    background-color: darkgray;
+}
+.folder button{
+  height: 32px;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 12px;
+}
+.inputbox{
+    height: 40px;
+    width: 192px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    margin: 4px;
+    text-align: start;
+    padding-left: 8px;
+}

@@ -1,72 +1,61 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
-export default function StopWatch(){
-    // will start from zero
-    // mm:ss:mss mss
-    // setMiliseconds((mss+1))
-    // if(mss>1000)
-    // setSeconds((ss+1))
-    // if(ss>1)
-    // setMinute((m+1))
-    const [minutes, setMinutes] = useState(0)
-    const [seconds, setSeconds] = useState(0)
-    const [millis, setMillis] = useState(0)
-    const [isRunning, setIsRunning] = useState(false);
+export default function StopWatch() {
+  const [isRunning, setIsRunning] = useState(false); // To track if the stopwatch is running
+  const [milliSeconds, setMilliSeconds] = useState(0); // Track milliseconds
+  const [seconds, setSeconds] = useState(0); // Track seconds
+  const [minutes, setMinutes] = useState(0); // Track minutes
 
-  
-    const intervalref = useRef(null)
-
-    function formatTime(value){
-       return String(value).padStart(2, "0")
+  useEffect(() => {
+    let interval;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setMilliSeconds((prevMilli) => {
+          if (prevMilli >= 990) {
+            // If milliseconds reach 1000, increment seconds
+            setSeconds((prevSec) => {
+              if (prevSec >= 59) {
+                // If seconds reach 60, increment minutes
+                setMinutes((prevMin) => prevMin + 1);
+                return 0; // Reset seconds
+              }
+              return prevSec + 1;
+            });
+            return 0; // Reset milliseconds
+          }
+          return prevMilli + 10; // Increment milliseconds
+        });
+      }, 10);
+    } else {
+      clearInterval(interval);
     }
 
+    return () => clearInterval(interval); // Cleanup interval
+  }, [isRunning]);
 
-    function formatTime(){
-     
-    }
+  // Start the stopwatch
+  const startStopwatch = () => setIsRunning(true);
 
-    const startStopwatch = () =>{
-      if(!isRunning){
-        setIsRunning(true);
-        intervalref.current = setInterval(()=>{
-          setMillis((pMillis)=>{
-            if(pMillis<999){
-              return pMillis + 1;
-            }
-            else{
-              setSeconds((pSeconds)=>{
-                if(pSeconds<59)
-                  return (pSeconds+1)
-                else{
-                  setMinutes((pMinutes)=>pMinutes + 1)
-                  return 0;
-                }
-              })
-              return 0;
-            }
-          })
-        }, 1) //update every millisecond
-      }
-    }
+  // Stop the stopwatch
+  const stopStopwatch = () => setIsRunning(false);
 
-    const stopStopwatch = () =>{
-      clearInterval(intervalref.current)
-      setIsRunning(false)
-      setMillis(0)
-      setMinutes(0)
-      setSeconds(0)
-    }
-    const resetStopwatch = () =>{
-      setMillis(0)
-      setMinutes(0)
-      setSeconds(0)
-    }
+  // Reset the stopwatch
+  const resetStopwatch = () => {
+    setIsRunning(false);
+    setMilliSeconds(0);
+    setSeconds(0);
+    setMinutes(0);
+  };
 
-    return(
-      <div>
+  // Format time to always show 2 digits
+  const formatTime = (timeUnit) => timeUnit.toString().padStart(2, "0");
+
+  return (
+    <div>
       <h1>
-        {formatTime(minutes)}:{formatTime(seconds)}:
-        {String(millis).padStart(3, "0")}
+        {formatTime(minutes)}:{formatTime(seconds)}.{formatTime(
+          Math.floor(milliSeconds / 10)
+        )}
       </h1>
       <div>
         {!isRunning ? (
@@ -77,5 +66,5 @@ export default function StopWatch(){
         <button onClick={resetStopwatch}>Reset Stopwatch</button>
       </div>
     </div>
-    )
+  );
 }

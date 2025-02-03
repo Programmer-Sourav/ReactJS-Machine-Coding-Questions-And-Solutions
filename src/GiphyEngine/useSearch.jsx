@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export function useSearch({query}){
  const [gifyData, setGifyData] = useState([])
 
- const apiKey = "9VIa7o9sqHHSf0X4w00npWU4L5f4dEZP"; //should be saved in an environment variable
+ const apiKey = process.env.REACT_APP_SECRET_KEY; //should be saved in an environment variable
 
  const getGiffyData = async() =>{
     try{

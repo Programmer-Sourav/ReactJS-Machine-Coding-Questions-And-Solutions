@@ -108,6 +108,7 @@ import NestedCommentTwo from './NestedComments2/NestedCommentsTwo.jsx';
 import NestedComment from './NestedComments2/NestedComment3.jsx';
 import SearchComponent from './GiphyEngine/SearchComponent.jsx';
 import Calculator from './Calculator/Calculator.jsx';
+import CustomModal from './Modal/CustomModal.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -297,7 +298,8 @@ function App() {
         {/* <NestedCommentTwo/> */}
         {/* <NestedComment/> */}
         {/* <SearchComponent/> */}
-        <Calculator/>
+        {/* <Calculator/> */}
+        <CustomModal/>
     </div>
   );
 }

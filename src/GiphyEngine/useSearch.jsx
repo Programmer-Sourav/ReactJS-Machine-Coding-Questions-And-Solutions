@@ -29,7 +29,6 @@ const debounced = function(mainFn, delay){
       return function debouncedVersion(...args){
           clearTimeout(timerId)
          timerId =setTimeout(()=>{
-            console.log(3444, "Inside")
              mainFn.call(this, ...args)
           }, delay)
       }

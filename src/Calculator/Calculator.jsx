@@ -30,8 +30,6 @@ export default function Calculator(){
     const handleOperation = (operatorSelected) =>{
         switch(operatorSelected){
             case "%":
-               //calculateResult(numberSelected, "%", numberSelected )
-            
                if(numberSelected.operator===""){
                 setNumberSelected({...numberSelected, operator: operatorSelected})
                }
@@ -105,7 +103,7 @@ export default function Calculator(){
         setResult(0)
         setNumberSelected({operand1:"", operator:"", operand2:""})
     }
-    console.log(2333311,  result)
+  
     return(
         <div className="calculator"> 
         <div className="displaytop"> {result ? result : `${numberSelected.operand1}${numberSelected.operator}${numberSelected.operand2}`|| 0}  </div>
@@ -117,7 +115,7 @@ export default function Calculator(){
           </button>
                ))}  
           {
-            Array.from({length: 10}).map((item, index)=>(
+            Array.from({length: 10}).map((_, index)=>(
                 <div className="display">
                 <button  onClick={()=>{onClickNumber(index)}}>{index}</button>
                 </div>

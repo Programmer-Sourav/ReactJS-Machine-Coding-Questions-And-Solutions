@@ -109,6 +109,7 @@ import NestedComment from './NestedComments2/NestedComment3.jsx';
 import SearchComponent from './GiphyEngine/SearchComponent.jsx';
 import Calculator from './Calculator/Calculator.jsx';
 import CustomModal from './Modal/CustomModal.jsx';
+import FetchPokemon from './MemoizedAPI/FetchPokemon.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -299,7 +300,8 @@ function App() {
         {/* <NestedComment/> */}
         {/* <SearchComponent/> */}
         {/* <Calculator/> */}
-        <CustomModal/>
+        {/* <CustomModal/> */}
+        {/* <FetchPokemon/> */}
     </div>
   );
 }

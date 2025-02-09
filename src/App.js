@@ -110,6 +110,9 @@ import SearchComponent from './GiphyEngine/SearchComponent.jsx';
 import Calculator from './Calculator/Calculator.jsx';
 import CustomModal from './Modal/CustomModal.jsx';
 import FetchPokemon from './MemoizedAPI/FetchPokemon.jsx';
+import BuggyComponent from './ErrorBoundaryRevise/BuggyComponent.jsx';
+import ErrorBoundaryApp from './ErrorBoundaryRevise/ErrorBoundaryApp.jsx';
+import CookiesComponent from './Cookies/Cookies.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -302,6 +305,8 @@ function App() {
         {/* <Calculator/> */}
         {/* <CustomModal/> */}
         {/* <FetchPokemon/> */}
+        {/* <ErrorBoundaryApp/> */}
+           <CookiesComponent/>
     </div>
   );
 }

@@ -113,6 +113,9 @@ import FetchPokemon from './MemoizedAPI/FetchPokemon.jsx';
 import BuggyComponent from './ErrorBoundaryRevise/BuggyComponent.jsx';
 import ErrorBoundaryApp from './ErrorBoundaryRevise/ErrorBoundaryApp.jsx';
 import CookiesComponent from './Cookies/Cookies.jsx';
+import UseFetchComponent from './CustomHooks/UseFetchComponent.jsx';
+import useTimeoutRevise from './CustomHooks/useTimeoutRevise.jsx';
+import UseTimeoutComponent from './CustomHooks/UseTimeoutComponent.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -122,11 +125,11 @@ import CookiesComponent from './Cookies/Cookies.jsx';
 
 
 function App() {
-  const [message, setMessage] = useState("Waiting!")
+
   const [count, setCount] = useState(0)
   const previousCount = usePrevious(count)
   const [hoverRef, isHovering] = useHover()
-  const [toggleState, toggleFunction] = useToggle()
+  //const [toggleState, toggleFunction] = useToggle()
   const [searchInputValue, setSearchInputValue] = useState("")
   const [ref, focus] = useFocus()
   const [copiedText, copy] = useCopyToClipboard() 
@@ -306,7 +309,13 @@ function App() {
         {/* <CustomModal/> */}
         {/* <FetchPokemon/> */}
         {/* <ErrorBoundaryApp/> */}
-           <CookiesComponent/>
+           {/* <CookiesComponent/> */}
+           {/* <Accordian/> */}
+           {/* <CustomModal/> */}
+           {/* <UseFetchComponent/> */}
+           {/* <CustomToggleComponent/> */}
+           {/* <UseTimeoutComponent/> */}
+           <Form/>
     </div>
   );
 }

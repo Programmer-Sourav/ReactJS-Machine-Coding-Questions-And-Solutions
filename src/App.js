@@ -30,7 +30,7 @@ import CountdownTimer from './CountdownTimer/CountdownTimer';
 import InfiniteScroll from './InfinteScroll/InfiniteScroll';
 import { createContext, useContext, useEffect, useState } from 'react';
 import ToggleTheme from './ToggleTheme';
-import ProgressBar from './ProgressBar/ProgressBar';
+//import ProgressBar from './ProgressBar/ProgressBar';
 import Form from './Form';
 import CountdownTimerRevise from './CountdownTimerRevise';
 import HandleWindowSize from './HandleWindowSize';
@@ -78,7 +78,7 @@ import FileUpload from './FileUpload.jsx';
 import AsyncComponent from './CustomHooks/AsyncComponent.jsx';
 import ShimmerUIComponent from './ShimmerUI/ShimmerUIComponent.jsx';
 import CountDownTimerR2 from './CountdownTimer/CountDownTimerR2.jsx';
-import CustomToggleComponent from './CustomHooks/CustomToggleComponent.jsx';
+// import CustomToggleComponent from './CustomHooks/CustomToggleComponent.jsx';
 import CustomUseFocus from './CustomHooks/CustomUseFocus.jsx';
 import CustomUsePrevious from './CustomHooks/CustomUsePrevious.jsx';
 import TimerComponent from './CustomHooks/TimerComponent.jsx';
@@ -116,6 +116,9 @@ import CookiesComponent from './Cookies/Cookies.jsx';
 import UseFetchComponent from './CustomHooks/UseFetchComponent.jsx';
 import useTimeoutRevise from './CustomHooks/useTimeoutRevise.jsx';
 import UseTimeoutComponent from './CustomHooks/UseTimeoutComponent.jsx';
+import CustomToggleComponent from './Revise/CustomToggleComponenet.jsx';
+import ProgressBar from './CustomHooks/StackOfProgressBars/ProgressBar.jsx';
+import ProgressbarTwoCG from './CustomHooks/StackOfProgressBars/ProgressbarTwoCG.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -315,7 +318,11 @@ function App() {
            {/* <UseFetchComponent/> */}
            {/* <CustomToggleComponent/> */}
            {/* <UseTimeoutComponent/> */}
-           <Form/>
+           {/* <Form/> */}
+           {/* <CustomToggleComponent/> */}
+          {/* <ProgressBar/> */}
+          {/* <ProgressbarTwoCG/> */} /**Working */
+          <ProgressBar/>
     </div>
   );
 }

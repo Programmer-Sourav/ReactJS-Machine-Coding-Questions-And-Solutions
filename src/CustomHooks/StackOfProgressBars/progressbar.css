@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.progressbar{
+    display: flex;
+    height: 40px;
+    width: 512px;
+    color: gray;
+}
+
+.progressbar-filled1 {
+    height: 100%;
+    transition: width 0.5s;
+  }

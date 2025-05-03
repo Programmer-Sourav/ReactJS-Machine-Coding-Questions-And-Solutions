@@ -1,45 +1,90 @@
+import { ChevronLeft, ChevronRight} from "lucide-react";
 import { useState } from "react"
-import "./Carousel.css"
-import CarouselItem from "./CarouselItem";
-import LeftArrow from "./assets/left-arrow.svg"
-import RightArrow from "./assets/right-arrow.svg"
+import "../carousel.css"
 
+import CI1 from "../../assets/ci1.jpg"
+import CI2 from "../../assets/ci2.jpg"
+import CI3 from "../../assets/ci3.jpg"
 
-export default function Carousel({data}){
-   console.log(111, data, data.length)
-    //carousel is simply map over image url and display in the same frame/position
-    //left button and right button
-    //indicators will be under each image
+//bit cleaner approach according to me.
+export default function Carousel(){
 
-    const [slide, setSlide] = useState(0)
+    const arrOfImages = [
+        {id: 1, src: CI1, alt: "image1"},
+        {id: 2, src: CI2, alt: "image2"},
+        {id: 3, src: CI3, alt: "image3"}
+    ]
+    const [images, setImages] = useState(arrOfImages)
+    const [slideId, setSlideId] = useState(0);
 
-    
-    const nextSlide = ()=> setSlide(slide === data.length - 1 ? 0 : slide+1);
-    const prevSlide = ()=> setSlide(slide === 0 ? data.length - 1 : slide - 1 )
+  const onLeftBtnClick = () => {
+    setSlideId((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
-    
+  const onRightBtnClick = () => {
+    setSlideId((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const currentImage = [images[slideId]];
+
     return(
-        <div className="carousel"> 
-        <img src={LeftArrow} alt="left-arrow" onClick={prevSlide} className='arrow arrow-left' />
-         {
-            data.map((item, idx)=>(
-                <CarouselItem
-                key={item.id} // Assuming each item has a unique 'id'
-                src={item.src}
-                alt={item.alt}
-                isActive={slide === idx}
-              />
-            ))
-         }
-         <span className="indicators">
-            {
-                data.map((item, index)=>(
-                    <button key={index} className={`indicator ${slide!==index ? 'indicator-inactive' : ''}`} onClick={()=>{setSlide(index)}}></button>
-                ))
-            }
-         </span>
-         <img src={RightArrow} alt="right-arrow" onClick={nextSlide} className="arrow arrow-right"/>
+        <div className="container"> 
+          <ChevronLeft  color="green" className="w-8 h-8 m-2" onClick={onLeftBtnClick}/>
+         
+          {currentImage.map((imageItem, index)=>(
+            <div className="imagePos" key={index}>
+                <img src={imageItem.src} alt={imageItem.alt}/>
+                 </div>
+          ))}
+         
+          <ChevronRight color="green" className="w-8 h-8 m-2" onClick={onRightBtnClick}/>
         </div>
     )
-
 }
+
+
+/**
+ * 
+ * 
+ * export default function Carousel(){
+
+    const arrOfImages = [
+        {id: 1, src: CI1, alt: "image1"},
+        {id: 2, src: CI2, alt: "image2"},
+        {id: 3, src: CI3, alt: "image3"}
+    ]
+    const [images, setImages] = useState(arrOfImages)
+    const [slideId, setSlideId] = useState(0)
+    const [filteredList, setFilteredList] = useState(images)
+    let selectedImages  = [...images];
+
+    const onLeftBtnClick = () =>{
+        setSlideId(slideId-1)
+        const filteredList = selectedImages.find((imageItem)=>imageItem.id===slideId-1)
+        setFilteredList([filteredList])
+    }
+
+    const onRightBtnClick = () =>{
+        setSlideId((slideId)=>slideId+1)
+        const filteredList = selectedImages.find((imageItem)=>imageItem.id===slideId+1)
+        console.log(111, filteredList, slideId)
+        setFilteredList([filteredList])
+    }
+  console.log(2222, images, slideId)
+    return(
+        <div className="container"> 
+          <ChevronLeft  color="green" className="w-8 h-8 m-2" onClick={onLeftBtnClick}/>
+         
+          {filteredList.map((imageItem, index)=>(
+            <div className="imagePos">
+                <img src={imageItem.src} alt={imageItem.alt}/>
+                 </div>
+          ))}
+         
+          <ChevronRight color="green" className="w-8 h-8 m-2" onClick={onRightBtnClick}/>
+        </div>
+    )
+}
+ * 
+ * 
+ */

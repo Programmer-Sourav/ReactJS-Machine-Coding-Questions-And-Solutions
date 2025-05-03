@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    height: 252px;
+    width: 332px;
+    background-color: gainsboro;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.imagePos{
+    position: absolute;
+    width: 252px;
+    height: 252px;
+    margin-left: 32px;
+}

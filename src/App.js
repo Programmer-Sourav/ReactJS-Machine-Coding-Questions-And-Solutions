@@ -119,11 +119,12 @@ import UseTimeoutComponent from './CustomHooks/UseTimeoutComponent.jsx';
 import CustomToggleComponent from './Revise/CustomToggleComponenet.jsx';
 import ProgressBar from './CustomHooks/StackOfProgressBars/ProgressBar.jsx';
 import ProgressbarTwoCG from './CustomHooks/StackOfProgressBars/ProgressbarTwoCG.jsx';
-import FileExplorerRevise from './FileExplorer/FileExplorerRevise.jsx';
+// import FileExplorerRevise from './FileExplorer/FileExplorerRevise.jsx';
 import FileExplorerMain from './FileExplorer2/FileExplorerMain.js';
 import DataFetchingComponent from './CustomHooks/DataFetching/DataFetchingComponent.jsx';
 import FormComponent from './CustomHooks/FormComponent/FormComponent.jsx';
 import FileUploadComponent from './CustomHooks/FormComponent/FileUploadComponent.jsx';
+import FileTransferWS from './ChatFileTransfer/FileTransferWS.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -332,7 +333,8 @@ function App() {
           {/* <FileExplorerMain/> */}
           {/* <DataFetchingComponent/> */}
           {/* <FormComponent/> */}
-          <FileUploadComponent/>
+          {/* <FileUploadComponent/> */}
+          <FileTransferWS/>
     </div>
   );
 }

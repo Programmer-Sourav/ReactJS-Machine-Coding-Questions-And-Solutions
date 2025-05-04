@@ -2,9 +2,9 @@ import { ChevronLeft, ChevronRight} from "lucide-react";
 import { useState } from "react"
 import "../carousel.css"
 
-import CI1 from "../../assets/ci1.jpg"
-import CI2 from "../../assets/ci2.jpg"
-import CI3 from "../../assets/ci3.jpg"
+import CI1 from "../assets/ci1.jpg"
+import CI2 from "../assets/ci2.jpg"
+import CI3 from "../assets/ci3.jpg"
 
 //bit cleaner approach according to me.
 export default function Carousel(){

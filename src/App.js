@@ -125,6 +125,8 @@ import DataFetchingComponent from './CustomHooks/DataFetching/DataFetchingCompon
 import FormComponent from './CustomHooks/FormComponent/FormComponent.jsx';
 import FileUploadComponent from './CustomHooks/FormComponent/FileUploadComponent.jsx';
 import FileTransferWS from './ChatFileTransfer/FileTransferWS.jsx';
+import SimpleCount from './SearchLikeBlinkIt/SimpleCount.jsx';
+import ParentComponent from './SearchLikeBlinkIt/ParentComponent.jsx';
 //import useToggle from './useToggle.js';
 
 //import NestedCommentsLatest from './NestedComments/NestedCommentsLatest.jsx';
@@ -334,7 +336,9 @@ function App() {
           {/* <DataFetchingComponent/> */}
           {/* <FormComponent/> */}
           {/* <FileUploadComponent/> */}
-          <FileTransferWS/>
+          {/* <FileTransferWS/> */}
+          {/* <SimpleCount/> */}
+          <ParentComponent/>
     </div>
   );
 }

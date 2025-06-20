@@ -3,11 +3,11 @@ import useUser from "./useUser"
 
 export default function UserContainer(){
 
-    const { user, setUser} = useUser();
+    const { user, setUser, handleUser} = useUser();
 
      console.log(44455, user)
 
     return(
-       <UserPresenter user = {user}/>
+       <UserPresenter user = {user} handleUser = {handleUser}/>
     )
 }

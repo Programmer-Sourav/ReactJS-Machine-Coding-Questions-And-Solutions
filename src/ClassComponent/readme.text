@@ -1,0 +1,118 @@
+| **Method**                  | **Purpose**                                                                     |
+| --------------------------- | ------------------------------------------------------------------------------- |
+| **constructor(props)**      | Initialize state, bind methods. Runs **once** when component is created.        |
+| **render()**                | Describes the UI based on current props/state. Can be called multiple times.    |
+| **componentDidMount()**     | Called once **after first render**. Good for data fetching, subscriptions.      |
+| **shouldComponentUpdate()** | Optional. Used for performance optimizations by preventing unnecessary renders. |
+| **componentDidUpdate()**    | Called **after updates**. Use it to react to prop/state changes.                |
+| **componentWillUnmount()**  | Runs right before the component is removed. Useful for cleanup.                 |
+| **Custom methods**          | Your own functions for handlers, like `updateBio()`.                            |
+
+
+
+     MOUNTING PHASE
+    ┌────────────────────────┐
+    │ constructor()          │
+    │     ↓                  │
+    │ render()               │
+    │     ↓                  │
+    │ componentDidMount()    │
+    └────────────────────────┘
+
+     UPDATING PHASE (on props/state change)
+    ┌───────────────────────────────┐
+    │ shouldComponentUpdate()       │
+    │     ↓                         │
+    │ render()                      │
+    │     ↓                         │
+    │ componentDidUpdate()          │
+    └───────────────────────────────┘
+
+     UNMOUNTING PHASE
+    ┌──────────────────────┐
+    │ componentWillUnmount │
+    └──────────────────────┘
+
+
+✅ Summary
+Class components are useful for complex logic and explicit lifecycle control.
+
+Use state for dynamic data and props to receive data.
+
+You can control behavior at each stage of the component’s life using the lifecycle methods.
+
+In modern React, function components + hooks are often preferred, 
+but understanding class components is still important
+ (especially for legacy codebases or certain performance cases).
+
+
+
+
+ ❓ Is constructor() necessary in React class components?
+👉 Short Answer: No, it's not strictly necessary.
+You only need a constructor() if you:
+
+Want to initialize state manually with this.state = {...}
+
+Need to bind methods to the component instance (older practice)
+
+✅ When constructor is NOT needed
+React provides a cleaner alternative using class field syntax (ES6+), where you can:
+
+Initialize state without constructor:
+
+js
+Copy
+Edit
+class MyComponent extends React.Component {
+  state = {
+    count: 0
+  };
+}
+Use arrow functions for method binding:
+
+js
+Copy
+Edit
+handleClick = () => {
+  this.setState({ count: this.state.count + 1 });
+}
+So you can avoid writing:
+
+js
+Copy
+Edit
+constructor(props) {
+  super(props);
+  this.state = { count: 0 };
+  this.handleClick = this.handleClick.bind(this);
+}
+⚠️ When constructor IS needed
+Use constructor() only if:
+
+You’re using an older version of JavaScript (pre-ES6)
+
+You need to do something before the component mounts and can’t use field syntax
+
+You want to call super(props) for custom logic involving props in the constructor
+
+Example:
+
+js
+Copy
+Edit
+constructor(props) {
+  super(props);
+  console.log('Props at construction:', props);
+  this.state = {
+    greeting: `Hello, ${props.name}`
+  };
+}
+🧠 Summary
+Situation	Constructor Needed?
+Initialize state using field syntax	❌ No
+Bind event handlers with arrow functions	❌ No
+Using super(props) with logic	✅ Yes
+Using older JavaScript versions	✅ Yes
+
+
